@@ -5,7 +5,7 @@ import random
 
 st.set_page_config(page_title="Quant Signal Explainer", layout="wide")
 
-st.title("📊 Fixed Income Quant Research – Signal Explainer Dashboard")
+st.title("Fixed Income Quant Research – Signal Explainer Dashboard")
 st.markdown(
 """
 This dashboard demonstrates how financial news and insider reports can be 
@@ -64,11 +64,11 @@ df = pd.DataFrame(rows)
 col1, col2 = st.columns([2,1])
 
 with col1:
-    st.subheader("📈 Generated Trading Signals")
+    st.subheader("Generated Trading Signals")
     st.dataframe(df, use_container_width=True)
 
 with col2:
-    st.subheader("⚙️ Model Controls")
+    st.subheader("Model Controls")
     noise = st.slider("Signal Sensitivity", 0.1, 1.0, 0.6)
     refresh = st.button("Regenerate Signals")
 
@@ -76,11 +76,11 @@ with col2:
         st.experimental_rerun()
 
 # ---- Visualization ----
-st.subheader("📊 Sentiment Distribution")
+st.subheader("Sentiment Distribution")
 st.bar_chart(df.set_index("Stock")["Sentiment Score"])
 
 # ---- Explainability Section ----
-st.subheader("🔎 Signal Explanation")
+st.subheader("Signal Explanation")
 
 selected = st.selectbox("Select a stock to inspect", stocks)
 
